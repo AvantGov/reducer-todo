@@ -1,17 +1,16 @@
 // * dependencies:
-import React, { useReducer } from 'react';
-import { initialState, todoReducer } from '../reducers/index';
+import React from 'react';
+
 
 // * components: 
 import Card from './Card';
 
-const CardContainer = () => {
-   const [ state, dispatch ] = useReducer(todoReducer, initialState)
+const CardContainer = (props) => {
+   
 
     return (
         <div className="card-container">
-            {console.log(state)}
-            {state.data.map((item) => <Card key={item.id} listItem={item} />)}
+            {props.state.data.map((item) => <Card key={item.id} listItem={item} />)}
         </div>
     )
 }

@@ -1,13 +1,13 @@
 // * dependencies:
-import React, { useState, useReducer } from 'react';
-import { initialState, todoReducer } from '../reducers/index';
+import React, { useState } from 'react';
+// import { initialState, todoReducer } from '../reducers/index';
 
 
 
-const FormContainer = () => {
+const FormContainer = (props) => {
 
     const [ newItem, setNewItem ] = useState('')
-    const [ state, dispatch ] = useReducer(todoReducer, initialState)
+    // const [ state, dispatch ] = useReducer(todoReducer, initialState)
 
     //  * handle change with the setNewItem() to state 
     const handleChange = (event) => {
@@ -18,7 +18,7 @@ const FormContainer = () => {
         <div className="form-container">
             <form className="form-container__form" onSubmit={(event) => {
                 event.preventDefault();
-                dispatch({ type: "ADD_ITEM", payload: newItem });
+                props.dispatch({ type: "ADD_ITEM", payload: newItem });
                 setNewItem('');
             }}>
                 <input 

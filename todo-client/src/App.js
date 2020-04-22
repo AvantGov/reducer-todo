@@ -1,5 +1,6 @@
 // * dependencies 
-import React from 'react';
+import React, { useReducer } from 'react';
+import { initialState, todoReducer } from './reducers/index';
 
 // * components:
 import CardContainer from './components/CardContainer';
@@ -9,10 +10,13 @@ import FormContainer from './components/FormContainer';
 import './CSS/index.css'
 
 function App() {
+
+  const [ state, dispatch ] = useReducer(todoReducer, initialState)
+
   return (
     <div className="App">
-      <FormContainer />
-      <CardContainer />
+      <FormContainer dispatch={dispatch}/>
+      <CardContainer  state={state}/>
     </div>
   );
 }
