@@ -1,44 +1,40 @@
 // * dependencies:
-import React, { Component } from 'react';
+import React, { useState, useReducer } from 'react';
+import { initialState, todoReducer } from '../reducers/index';
 
-class ToDoForm extends Component {
 
-    constructor () {
-        super ();
-        this.state = {
-            item: '',
-            completed: false
-        }
+
+const FormContainer = () => {
+
+    const [ newItem, setNewItem ] = useState('')
+    const [ state, dispatch ] = useReducer(todoReducer, initialState)
+
+    //  * handle change with the setNewItem() to state 
+    const handleChange = (event) => {
+        setNewItem(event.target.value);
     }
 
-    handleChange = (event) => {
-        this.setState({ [event.target.name]: event.target.value});
-        // console.log("input change:", event.target.value);
-    }
-
-    handleSubmit = (event) => {
-        // building out use local storage hook to store the values of the list 
-    }
-
-    render () {
-        return (
-            <div className="todo-form">
-                <form className="todo-form__form">
-                    <input 
-                        className="form__input"
-                        type='text'
-                        placeholder="new item"
-                        name="itemInput"
-                        onChange={this.handleChange}
-                    ></input>
-                    <button 
-                        className="form__button"
-                        // onClick={handleSubmit}
-                    >Create Item</button>
-                </form>
-            </div>
-        )
-    }
+    return (
+        <div className="form-container">
+            <form className="form-container__form" onSubmit={(event) => {
+                event.preventDefault();
+                dispatch({ type: "ADD_ITEM", payload: newItem });
+                setNewItem('');
+            }}>
+                <input 
+                    className="form-container__input"
+                    type="text"
+                    placeholder="new item"
+                    name="newItem"
+                    onChange={handleChange}
+                    value={newItem}
+                />
+                <button className="form__button" type="submit">Add Item</button>
+            </form>
+            <button className="form-container__button">Clear Completed</button>
+            {/* need to use this to complete the fitler method on completed items */}
+        </div>
+    )
 }
 
-export default ToDoForm;
+export default FormContainer;

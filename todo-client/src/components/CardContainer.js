@@ -1,45 +1,19 @@
 // * dependencies:
-import React, { Component } from 'react';
+import React, { useReducer } from 'react';
+import { initialState, todoReducer } from '../reducers/index';
 
 // * components: 
 import Card from './Card';
 
+const CardContainer = () => {
+   const [ state, dispatch ] = useReducer(todoReducer, initialState)
 
-class CardContainer extends Component {
-
-    constructor () {
-        super();
-        this.state = {
-            data: [
-                {
-                    name: 'Learn about reducers',
-                    completed: false,
-                    id: 3892987589
-                  }
-            ]
-        }
-    }
-
-    completeHandler = (itemId) => {
-        console.log('item id:', itemId);
-
-        this.setState({
-            data: this.state.data.map((item) =>{
-                return (itemId === item.id) ? { ...item, completed: !item.completed} : item
-            })
-        })
-    }
-
-    render() {
-        return (
-            <div className="card-container">
-                {this.state.data.map((item) => 
-                    <Card listItem={item} key={item.id} completeHandler={this.completeHandler} />
-                )}
-            </div>
-        )
-    }
-
+    return (
+        <div className="card-container">
+            {console.log(state)}
+            {state.data.map((item) => <Card key={item.id} listItem={item} />)}
+        </div>
+    )
 }
 
 export default CardContainer;
@@ -59,6 +33,18 @@ export default CardContainer;
 //             } else {
 //                 return item
 //             }
+//         })
+//     })
+// }
+
+
+// * handling changes short form, with ternary operator: 
+// completeHandler = (itemId) => {
+//     console.log('item id:', itemId);
+
+//     this.setState({
+//         data: this.state.data.map((item) =>{
+//             return (itemId === item.id) ? { ...item, completed: !item.completed} : item
 //         })
 //     })
 // }
