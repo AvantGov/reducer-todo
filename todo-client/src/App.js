@@ -2,7 +2,8 @@
 import React from 'react';
 
 // * components:
-
+import CardContainer from './components/CardContainer';
+import FormContainer from './components/FormContainer';
 
 // * stylings:
 import './CSS/index.css'
@@ -10,7 +11,8 @@ import './CSS/index.css'
 function App() {
   return (
     <div className="App">
-      <h1> THIS IS THE HEADER </h1>
+      <FormContainer />
+      <CardContainer />
     </div>
   );
 }
