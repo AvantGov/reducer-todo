@@ -84,13 +84,17 @@ Html{
 		width: 80%;
 		height: 50px;
 		display: flex;
-		justify-content: space-around;
+		justify-content: center;
 		margin: 2% auto;
 
 		input{
 			width: 500px;
 			border: 2px solid @red;
 		
+		}
+
+		button {
+			margin-left: 2%;
 		}
 
 	}
@@ -102,6 +106,37 @@ Html{
 		border: 2px solid @red;
 		color: @red;
 		border-radius: 25px;
+		font-family: @title;
+		font-size: 1.5rem;
 	}
+}
 
+.card-container {
+	width: 95%;
+	margin: 1% auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+
+
+	.card {
+		width: 600px;
+		height: 70px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		border:  2px solid @red;
+		margin-top: 2%;
+		background-color: @matte-seafoam;
+
+
+		h1, label {
+			font-family: @title;
+			font-weight: @light-title;
+			color: white;
+		}
+
+		
+	}
 }

@@ -7,13 +7,15 @@ const Card = (props) => {
     return (
         <div className="card">
             <h1 className="card__title"> {props.listItem.name} </h1>
-            <label className="card__label" htmlFor="completed">Complete:</label>
-            <input 
-                className="card__checkbox" 
-                name="completed"
-                type="checkbox"
-                onClick={() => props.completeHandler({ type: "TOGGLE_COMPLETE", payload: props.itemId })}    
-            ></input>
+            <div className="card__compelte-div">
+                <label className="card__label" htmlFor="completed">Complete:</label>
+                <input 
+                    className="card__checkbox" 
+                    name="completed"
+                    type="checkbox"
+                    onClick={() => props.completeHandler({ type: "TOGGLE_COMPLETE", payload: props.itemId})}    
+                ></input>
+            </div>
             
         </div>
     )

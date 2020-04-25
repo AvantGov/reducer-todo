@@ -140,12 +140,15 @@ Html {
   width: 80%;
   height: 50px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   margin: 2% auto;
 }
 .form-container .form-container__form input {
   width: 500px;
   border: 2px solid #E35762;
+}
+.form-container .form-container__form button {
+  margin-left: 2%;
 }
 .form-container button {
   width: 150px;
@@ -154,4 +157,30 @@ Html {
   border: 2px solid #E35762;
   color: #E35762;
   border-radius: 25px;
+  font-family: 'Baloo Tamma 2', cursive;
+  font-size: 1.5rem;
+}
+.card-container {
+  width: 95%;
+  margin: 1% auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.card-container .card {
+  width: 600px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid #E35762;
+  margin-top: 2%;
+  background-color: #79A99F;
+}
+.card-container .card h1,
+.card-container .card label {
+  font-family: 'Baloo Tamma 2', cursive;
+  font-weight: 500;
+  color: white;
 }
