@@ -7,7 +7,7 @@ const Card = (props) => {
     return (
         <div className="card">
             <h1 className="card__title"> {props.listItem.name} </h1>
-            <div className="card__compelte-div">
+            <div className="card__complete-div">
                 <label className="card__label" htmlFor="completed">Complete:</label>
                 <input 
                     className="card__checkbox" 

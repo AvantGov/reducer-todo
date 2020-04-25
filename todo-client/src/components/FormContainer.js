@@ -24,7 +24,7 @@ const FormContainer = (props) => {
                 <input 
                     className="form-container__input"
                     type="text"
-                    placeholder="new item"
+                    placeholder="New Item"
                     name="newItem"
                     onChange={handleChange}
                     value={newItem}

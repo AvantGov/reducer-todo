@@ -33,6 +33,8 @@ export const todoReducer = ( state, action ) => {
                         return item;
                     }
                 })
+                // * ternerary operator:
+                // (item.id === action.payload) ? { ...item, completed: !item.completed} : item
             }
         case "FILTER_COMPLETE":
             console.log('filter ran')
@@ -45,8 +47,4 @@ export const todoReducer = ( state, action ) => {
     }
 }
 
-// return this.state.data.filter((item) => {
-//     return (
-//         !item.completed
-//     )
-// })  
+ 

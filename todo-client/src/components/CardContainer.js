@@ -11,7 +11,14 @@ const CardContainer = (props) => {
 
     return (
         <div className="card-container">
-            {props.state.data.map((item) => <Card key={item.id} itemId={item.id} listItem={item} completeHandler={props.dispatch}/>)}
+            {props.state.data.map((item) => 
+                <Card 
+                    key={item.id} 
+                    itemId={item.id} 
+                    listItem={item} 
+                    completeHandler={props.dispatch}
+                />
+            )}
         </div>
     )
 }
