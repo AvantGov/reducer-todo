@@ -7,10 +7,11 @@ import Card from './Card';
 
 const CardContainer = (props) => {
    
+    console.log("card container props:", props)
 
     return (
         <div className="card-container">
-            {props.state.data.map((item) => <Card key={item.id} listItem={item} />)}
+            {props.state.data.map((item) => <Card key={item.id} itemId={item.id} listItem={item} completeHandler={props.dispatch}/>)}
         </div>
     )
 }

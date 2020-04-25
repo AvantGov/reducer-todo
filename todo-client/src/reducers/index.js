@@ -26,9 +26,27 @@ export const todoReducer = ( state, action ) => {
             console.log('toggle complete')
             return {
                 ...state,
-                completed: action.payload
+                data: state.data.map((item) => {
+                    if (item.id === action.payload) {
+                        return { ...item, completed: !item.completed }
+                    } else {
+                        return item;
+                    }
+                })
+            }
+        case "FILTER_COMPLETE":
+            console.log('filter ran')
+            return {
+                ...state, 
+                data: state.data.filter((item) => !item.completed)
             }
         default:
             return state
     }
 }
+
+// return this.state.data.filter((item) => {
+//     return (
+//         !item.completed
+//     )
+// })  

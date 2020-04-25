@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <FormContainer dispatch={dispatch}/>
-      <CardContainer  state={state}/>
+      <CardContainer  state={state} dispatch={dispatch} />
     </div>
   );
 }

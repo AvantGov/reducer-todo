@@ -127,7 +127,31 @@ table {
 Html {
   font-size: 62.5%;
 }
-h1 {
-  font-family: 'Baloo Tamma 2', cursive;
-  font-weight: 800;
+.form-container {
+  width: 95%;
+  height: 200px;
+  margin: 2% auto;
+  background-color: #79A99F;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-container .form-container__form {
+  width: 80%;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  margin: 2% auto;
+}
+.form-container .form-container__form input {
+  width: 500px;
+  border: 2px solid #E35762;
+}
+.form-container button {
+  width: 150px;
+  height: 50px;
+  background-color: #ADC1BF;
+  border: 2px solid #E35762;
+  color: #E35762;
+  border-radius: 25px;
 }

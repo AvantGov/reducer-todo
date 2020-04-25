@@ -71,7 +71,37 @@ Html{
 
 // ! Styling: 
 
-h1 {
-    font-family: @title;
-	font-weight: @heavy-title;
+.form-container {
+	width: 95%;
+	height: 200px;
+	margin: 2% auto;
+	background-color: @matte-seafoam;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	.form-container__form {
+		width: 80%;
+		height: 50px;
+		display: flex;
+		justify-content: space-around;
+		margin: 2% auto;
+
+		input{
+			width: 500px;
+			border: 2px solid @red;
+		
+		}
+
+	}
+
+	button {
+		width: 150px;
+		height: 50px;
+		background-color: @light-slate;
+		border: 2px solid @red;
+		color: @red;
+		border-radius: 25px;
+	}
+
 }

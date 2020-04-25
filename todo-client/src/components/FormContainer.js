@@ -31,8 +31,8 @@ const FormContainer = (props) => {
                 />
                 <button className="form__button" type="submit">Add Item</button>
             </form>
-            <button className="form-container__button">Clear Completed</button>
-            {/* need to use this to complete the fitler method on completed items */}
+            <button className="form-container__button" onClick={()=> {props.dispatch({ type: "FILTER_COMPLETE" })}}>Clear Completed</button>
+
         </div>
     )
 }

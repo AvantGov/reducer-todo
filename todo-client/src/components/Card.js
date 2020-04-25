@@ -12,7 +12,7 @@ const Card = (props) => {
                 className="card__checkbox" 
                 name="completed"
                 type="checkbox"
-                // onClick={() => props.completeHandler(props.listItem.id)}    
+                onClick={() => props.completeHandler({ type: "TOGGLE_COMPLETE", payload: props.itemId })}    
             ></input>
             
         </div>
